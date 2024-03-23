@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Nav = () => {
+export const Nav = ({ isInHeader }) => {
   return (
-    <nav>
+    <nav className={isInHeader ? "nav-header" : "nav-footer"}>
       <ul>
         <li>
           <a href="#home">Home</a>

@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+      {/*<Main></Main>
+      <Footer></Footer>*/}
     </>
   );
 }

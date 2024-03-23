@@ -5,8 +5,10 @@ export const Footer = () => {
   return (
     <footer>
       <section>
-        <h3>Doormat Navigation</h3>
-        <Nav />
+        <h3>
+          Doormat <br /> Navigation
+        </h3>
+        <Nav isInHeader={false} />
       </section>
       <section>
         <h3>Contact</h3>
