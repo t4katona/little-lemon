@@ -1,6 +1,6 @@
 import React from "react";
-import { Nav } from "./Nav";
-import closeButton from "../../assets/close.svg";
+import { Nav } from "../nav/Nav";
+import closeButton from "../../../assets/close.svg";
 import styles from "./sidebar.module.css";
 
 const Sidebar = ({ show, handleOpen }) => {
@@ -9,7 +9,7 @@ const Sidebar = ({ show, handleOpen }) => {
       <img
         src={closeButton}
         alt="close-menu"
-        className="close-icon"
+        className={styles.close_icon}
         onClick={handleOpen}
       />
       <Nav isInHeder={false} />

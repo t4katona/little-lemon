@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Nav } from "./Nav";
+import { Nav } from "./nav/Nav";
 import Logo from "../../assets/Logo.svg";
 import HamburgerIcon from "../../assets/menu.svg";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar/Sidebar";
 import styles from "./header.module.css";
 
 export const Header = () => {
@@ -13,8 +13,8 @@ export const Header = () => {
   };
 
   return (
-    <header styles={styles.header}>
-      <img className="logo" src={Logo} alt="little-lemon-logo" />
+    <header className={`${styles.header} general_padding`}>
+      <img className={styles.logo} src={Logo} alt="little-lemon-logo" />
       <img
         className={styles.menu_icon}
         src={HamburgerIcon}

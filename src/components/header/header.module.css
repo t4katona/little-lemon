@@ -1,6 +1,7 @@
 header {
   width: 100%;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,9 +12,9 @@ header {
   height: auto;
 }
 
-.menu-icon,
-.close-icon {
-  width: 2.188rem;
+.menu_icon,
+.close_icon {
+  width: 1.8rem;
   height: auto;
 }
 

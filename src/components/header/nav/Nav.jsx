@@ -8,7 +8,7 @@ export const Nav = ({ isInHeader }) => {
         styles.nav
       }`}
     >
-      <ul>
+      <ul className="karla_highlight">
         <li>
           <a href="#home">Home</a>
         </li>

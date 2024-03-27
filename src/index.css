@@ -17,24 +17,24 @@ body {
   color: #333333;
 }
 
-li {
-  list-style-type: none;
-}
-
 a {
   text-decoration: none;
   color: #333333;
 }
 
-/* HEADER */
-
 li {
   margin: 2rem 0;
+  list-style-type: none;
 }
 
 li a {
   font-size: 1.25rem;
   padding: 2rem 0.5rem;
+}
+
+.general_padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* TYPEFACES */
