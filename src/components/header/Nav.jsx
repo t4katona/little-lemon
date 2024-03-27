@@ -1,8 +1,13 @@
 import React from "react";
+import styles from "./nav.module.css";
 
 export const Nav = ({ isInHeader }) => {
   return (
-    <nav className={isInHeader ? "nav-header" : "nav-footer"}>
+    <nav
+      className={`${isInHeader ? styles.nav_header : styles.nav_footer} ${
+        styles.nav
+      }`}
+    >
       <ul>
         <li>
           <a href="#home">Home</a>

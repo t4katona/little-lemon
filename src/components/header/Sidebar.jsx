@@ -1,16 +1,11 @@
 import React from "react";
 import { Nav } from "./Nav";
-import closeButton from "../assets/close.svg";
+import closeButton from "../../assets/close.svg";
+import styles from "./sidebar.module.css";
 
 const Sidebar = ({ show, handleOpen }) => {
-  const styles = {
-    showMenu: {
-      display: show ? "block" : "none",
-    },
-  };
-
   return (
-    <aside className="sidebar" style={styles.showMenu}>
+    <aside className={`${show ? styles.show : styles.hide} ${styles.sidebar}`}>
       <img
         src={closeButton}
         alt="close-menu"

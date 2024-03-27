@@ -1,11 +1,12 @@
 import React from "react";
-import { Nav } from "./Nav";
+import { Nav } from "./header/Nav";
+import styles from "./footer.module.css";
 
 export const Footer = () => {
   return (
     <footer>
       <section>
-        <h3>
+        <h3 className={styles.test}>
           Doormat <br /> Navigation
         </h3>
         <Nav isInHeader={false} />

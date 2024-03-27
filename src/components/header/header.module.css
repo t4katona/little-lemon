@@ -1,0 +1,22 @@
+header {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 11.25rem;
+  height: auto;
+}
+
+.menu-icon,
+.close-icon {
+  width: 2.188rem;
+  height: auto;
+}
+
+nav {
+  text-align: left;
+}

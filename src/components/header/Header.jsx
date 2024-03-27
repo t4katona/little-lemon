@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Nav } from "../components/Nav";
-import Logo from "../assets/Logo.svg";
-import HamburgerIcon from "../assets/menu.svg";
+import { Nav } from "./Nav";
+import Logo from "../../assets/Logo.svg";
+import HamburgerIcon from "../../assets/menu.svg";
 import Sidebar from "./Sidebar";
+import styles from "./header.module.css";
 
 export const Header = () => {
   const [isSidebarShown, setIsSidebarShown] = useState(false);
@@ -12,10 +13,10 @@ export const Header = () => {
   };
 
   return (
-    <header>
+    <header styles={styles.header}>
       <img className="logo" src={Logo} alt="little-lemon-logo" />
       <img
-        className="menu-icon"
+        className={styles.menu_icon}
         src={HamburgerIcon}
         alt="menu-icon"
         onClick={handleSidebarDisplay}

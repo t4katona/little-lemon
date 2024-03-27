@@ -28,45 +28,6 @@ a {
 
 /* HEADER */
 
-header {
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-header {
-  display: none;
-}
-
-.logo {
-  width: 11.25rem;
-  height: auto;
-}
-
-.menu-icon,
-.close-icon {
-  width: 2.188rem;
-  height: auto;
-}
-
-nav {
-  text-align: left;
-}
-
-.sidebar {
-  width: 60%;
-  height: 100%;
-  background-color: aquamarine;
-  position: fixed;
-  top: 0;
-  right: 0;
-  overflow-x: hidden;
-  padding: 3rem 1rem;
-  text-align: right;
-}
-
 li {
   margin: 2rem 0;
 }
@@ -74,4 +35,48 @@ li {
 li a {
   font-size: 1.25rem;
   padding: 2rem 0.5rem;
+}
+
+/* TYPEFACES */
+
+.markazi_display {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.markazi_subtitle {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.karla_lead {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.karla_section_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.karla_section_categories {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.karla_card_title {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.karla_paragraph {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.karla_highlight {
+  font-size: 1rem;
+  font-weight: 400;
 }
