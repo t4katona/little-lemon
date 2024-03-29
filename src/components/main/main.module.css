@@ -1,0 +1,33 @@
+main {
+  width: 100%;
+}
+
+.section_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.specials_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .section_header {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .specials_section {
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

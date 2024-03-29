@@ -1,0 +1,18 @@
+.specials_card_container {
+  width: 70%;
+  height: 100%;
+  background-color: #edefee;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.specials_card_img {
+  width: 100%;
+}
+
+.specials_infos_container {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 1fr;
+  padding: 0 1.5rem 0rem 1.5rem;
+}

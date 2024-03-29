@@ -1,0 +1,57 @@
+.hero_section {
+  max-width: 100%;
+  background-color: #495e57;
+  color: #edefee;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.hero_section > div > h1 {
+  margin-bottom: 1.5rem;
+}
+
+.hero_section > div > h2 {
+  margin-bottom: 1rem;
+}
+
+.hero_section > div > p {
+  margin-bottom: 3rem;
+}
+
+.hero_image_container {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero_section {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 61% 39%;
+  }
+
+  .hero_section > div p {
+    width: 85%;
+  }
+
+  .hero_image_container {
+    width: 100%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .hero_img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .hero_section {
+    grid-template-columns: 70% 30%;
+  }
+
+  .hero_section > div p {
+    width: 60%;
+  }
+}

@@ -1,7 +1,23 @@
+nav {
+  text-align: left;
+}
+
 .nav_header {
   display: none;
 }
 
 .nav_footer {
   display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav_header {
+    display: block;
+  }
+
+  ul li {
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
