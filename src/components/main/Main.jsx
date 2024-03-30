@@ -3,6 +3,7 @@ import { Chicago } from "./chicago/Chicago";
 import Button from "../button/Button";
 import styles from "./main.module.css";
 import { SpecialsCard } from "./cards/specials/SpecialsCard";
+import { TestimonialCard } from "./cards/testimonials/TestimonialCard";
 
 import GreekSaladImg from "../../assets/greek_salad.svg";
 import BruchettaImg from "../../assets/bruchetta.svg";
@@ -11,13 +12,13 @@ import LemonDessertImg from "../../assets/lemon-dessert.svg";
 export const Main = () => {
   return (
     <main>
-      <Chicago />
+      <Chicago isExtended={false} />
       <section className="general_padding">
         <header className={`${styles.section_header}`}>
           <h3 className="karla_section_title">This Weeks Specials!</h3>
           <Button>Online Menu</Button>
         </header>
-        <main className={styles.specials_section}>
+        <main className={styles.section_main}>
           <SpecialsCard
             name="Greek salad"
             price="$12.99"
@@ -38,6 +39,20 @@ export const Main = () => {
           />
         </main>
       </section>
+      <section
+        className={`${styles.extra_testimonial_section_style} general_padding`}
+      >
+        <header className={styles.section_header}>
+          <h3 className="karla_section_title">Testimonials</h3>
+        </header>
+        <main className={styles.section_main}>
+          <TestimonialCard />
+          <TestimonialCard />
+          <TestimonialCard />
+          <TestimonialCard />
+        </main>
+      </section>
+      <Chicago isExtended={true} />
     </main>
   );
 };

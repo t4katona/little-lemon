@@ -6,6 +6,16 @@
   padding-bottom: 1.5rem;
 }
 
+.extended_hero_section {
+  padding-bottom: 6rem;
+  background-color: white;
+  color: #333333;
+}
+
+.extended_hero_section h1 {
+  color: #333333;
+}
+
 .hero_section > div > h1 {
   margin-bottom: 1.5rem;
 }
@@ -20,6 +30,10 @@
 
 .hero_image_container {
   display: none;
+}
+
+.addtitional_images_container {
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -37,12 +51,57 @@
     width: 100%;
     display: block;
   }
+
+  .hero_img {
+  }
+}
+
+.addtitional_images_container {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .addtitional_images_container {
+    display: block;
+    position: relative;
+  }
+
+  .additional_image {
+    position: absolute;
+  }
+
+  .additional_image:nth-child(2) {
+    right: -1rem;
+    z-index: 1;
+  }
+
+  .additional_image:nth-child(1) {
+    top: 4rem;
+    right: 4rem;
+    z-index: 0;
+  }
 }
 
 @media only screen and (min-width: 992px) {
+  .extended_hero_section {
+    grid-template-columns: 50% 50%;
+  }
+
   .hero_img {
     width: 100%;
     height: 100%;
+  }
+
+  .additional_image:nth-child(2) {
+    right: -1rem;
+    top: 2rem;
+    z-index: 1;
+  }
+
+  .additional_image:nth-child(1) {
+    top: 8rem;
+    right: 10rem;
+    z-index: 0;
   }
 }
 

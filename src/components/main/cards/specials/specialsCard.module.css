@@ -1,8 +1,8 @@
 .specials_card_container {
   width: 100%;
   background-color: #edefee;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
   display: flex;
   flex-direction: column;
 }
@@ -49,11 +49,15 @@
 @media only screen and (min-width: 768px) {
   .specials_card_container {
     width: calc(100% / 2.05);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .specials_card_container {
     width: calc(100% / 3.2);
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
   }
 }
