@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./nav.module.css";
+import { Link } from "react-router-dom";
 
 export const Nav = ({ isInHeader }) => {
   return (
@@ -10,7 +11,9 @@ export const Nav = ({ isInHeader }) => {
     >
       <ul className="karla_highlight">
         <li>
-          <a href="#home">Home</a>
+          <Link to="/">
+            <a>Home</a>
+          </Link>
         </li>
         <li>
           <a href="#about">About</a>
@@ -19,7 +22,9 @@ export const Nav = ({ isInHeader }) => {
           <a href="#menu">Menu</a>
         </li>
         <li>
-          <a href="#reservations">Reservations</a>
+          <Link to="/booking">
+            <a>Reservations</a>
+          </Link>
         </li>
         <li>
           <a href="#orderonline">Order Online</a>
