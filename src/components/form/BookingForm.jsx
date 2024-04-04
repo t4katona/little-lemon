@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./bookingForm.module";
 
-export const BookingForm = ({ availableTimes, updateTimes, dispatch }) => {
+export const BookingForm = ({
+  availableTimes,
+  updateTimes,
+  dispatch,
+  submitAPI,
+}) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
@@ -13,15 +18,27 @@ export const BookingForm = ({ availableTimes, updateTimes, dispatch }) => {
 
   const handleDateSelection = (e) => {
     setDate(e.target.value);
-    console.log(e.target.value);
     updateTimes(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted");
-    console.log("selected date: " + date);
-    console.log("selected time: " + date);
+    const formData = {
+      date: date,
+      time: time,
+      guests: guests,
+      occasion: occasion,
+    };
+
+    console.log(formData);
+    submitAPI(formData)
+      .then((formData) => {
+        console.log("Form submitted successfully:", formData);
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      });
   };
 
   return (
@@ -42,11 +59,11 @@ export const BookingForm = ({ availableTimes, updateTimes, dispatch }) => {
           value={/*availableTimes.times[0]*/ time}
           onChange={(e) => setTime(e.target.value)}
         >
-          {/*availableTimes.times.map((item) => (
+          {availableTimes.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
-          ))*/}
+          ))}
         </select>
         <label htmlFor="guests">Number of guests</label>
         <input

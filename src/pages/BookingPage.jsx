@@ -2,7 +2,7 @@ import React, { useEffect, useReducer, useState } from "react";
 import { Header } from "../components/header/Header";
 import { BookingForm } from "../components/form/BookingForm";
 
-import { fetchAPI, submitAPI } from "../mockAPI";
+import { fetchAPI, submitAPI, initializeTimes } from "../mockAPI";
 
 /*const updateTimes = (state, action) => {
   switch (action.type) {
@@ -16,16 +16,11 @@ import { fetchAPI, submitAPI } from "../mockAPI";
 export const BookingPage = () => {
   //const [avaliableTimes, setAvaliableTimes] = useState("");
 
-  /*const initializeTimes = {
-    times: ["17:00", "18:00", "19:00", "20:00", "21:00"],
-  };*/
   //const [state, dispatch] = useReducer(updateTimes, initializeTimes);
 
   const [availableTimes, setAvailableTimes] = useState([]);
-  const [selectedDate, setSelectedDate] = useState("");
 
   const updateTimes = (date) => {
-    setSelectedDate(date);
     fetchAPI(date)
       .then((times) => {
         setAvailableTimes(times);
@@ -42,6 +37,7 @@ export const BookingPage = () => {
         <BookingForm
           updateTimes={updateTimes}
           availableTimes={availableTimes}
+          submitAPI={submitAPI}
         />
       }
       <h1>{availableTimes}</h1>

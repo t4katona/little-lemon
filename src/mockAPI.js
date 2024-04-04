@@ -1,23 +1,31 @@
 const avaliableTimesMock = {
-  "2024-04-10": ["09:00", "10:00", "11:00"],
-  "2024-04-11": ["13:00", "14:00", "15:00"],
-  "2024-04-26": ["19:00", "20:00", "21:00"],
+  "2024-12-12": ["17:00", "18:00", "19:00", "20:00", "21:00"],
 };
 
-{
-  /*avaliableTimesMock.forEach((date) => {
-  const times = avaliableTimesMock[date];
+const initializeTimes = {
+  user: null,
+  predefined: ["17:00", "18:00", "19:00", "20:00", "21:00"],
+};
 
-  times.forEach((time) => {
-    console.log(`Date: ${date}, Time: ${time}`);
-  });
-});*/
-}
+const testFunc = (date) => {
+  initializeTimes.user = date;
+  return initializeTimes.predefined;
+};
 
+const alreadySelectedDates = [];
 const fetchAPI = (date) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const avaliableTimesForSelectedDate = avaliableTimesMock[date] || [];
+      testFunc(date);
+      let avaliableTimesForSelectedDate = testFunc(date) || [];
+
+      alreadySelectedDates.map((selectedDate) => {
+        if (selectedDate.user == initializeTimes.user) {
+          avaliableTimesForSelectedDate = initializeTimes.predefined.filter(
+            (time) => time !== selectedDate.predefined
+          );
+        }
+      });
       resolve(avaliableTimesForSelectedDate);
     }, 1000);
   });
@@ -27,10 +35,14 @@ const submitAPI = (formData) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (formData) {
+        alreadySelectedDates.push({
+          user: formData.date,
+          predefined: formData.time,
+        });
         resolve(true);
       }
     }, 1000);
   });
 };
 
-export { fetchAPI, submitAPI };
+export { fetchAPI, submitAPI, initializeTimes };
