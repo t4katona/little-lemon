@@ -7,9 +7,22 @@ export const BookingForm = ({ availableTimes, updateTimes, dispatch }) => {
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
 
-  function updateTimes(e) {
+  /*function updateTimes(e) {
     dispatch({ type: "user_selected_time", newTime: e.target.value });
-  }
+  }*/
+
+  const handleDateSelection = (e) => {
+    setDate(e.target.value);
+    console.log(e.target.value);
+    updateTimes(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted");
+    console.log("selected date: " + date);
+    console.log("selected time: " + date);
+  };
 
   return (
     <>
@@ -20,20 +33,20 @@ export const BookingForm = ({ availableTimes, updateTimes, dispatch }) => {
           type="date"
           name="res-date"
           id="res-date"
-          onChange={(e) => setDate(e.target.value)}
+          onChange={(e) => handleDateSelection(e)}
         />
         <label htmlFor="res-time">Choose time</label>
         <select
           name="res-time"
           id="res-time"
-          value={availableTimes.times[0]}
-          onChange={updateTimes}
+          value={/*availableTimes.times[0]*/ time}
+          onChange={(e) => setTime(e.target.value)}
         >
-          {availableTimes.times.map((item) => (
+          {/*availableTimes.times.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>
-          ))}
+          ))*/}
         </select>
         <label htmlFor="guests">Number of guests</label>
         <input
@@ -59,6 +72,7 @@ export const BookingForm = ({ availableTimes, updateTimes, dispatch }) => {
           aria-label="On Click"
           type="submit"
           value="Make Your reservation"
+          onClick={handleSubmit}
         />
       </form>
     </>
