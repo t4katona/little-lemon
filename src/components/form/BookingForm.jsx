@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./bookingForm.module";
 
-export const BookingForm = ({
-  availableTimes,
-  updateTimes,
-  dispatch,
-  submitAPI,
-}) => {
+export const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
-
-  /*function updateTimes(e) {
-    dispatch({ type: "user_selected_time", newTime: e.target.value });
-  }*/
 
   const handleDateSelection = (e) => {
     setDate(e.target.value);
@@ -23,23 +14,17 @@ export const BookingForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
     const formData = {
       date: date,
       time: time,
       guests: guests,
       occasion: occasion,
     };
-
-    console.log(formData);
-    submitAPI(formData)
-      .then((formData) => {
-        console.log("Form submitted successfully:", formData);
-      })
-      .catch((error) => {
-        console.error("Error submitting form:", error);
-      });
+    submitForm(formData);
+    console.log("Form submitted");
   };
+
+  useEffect(() => {});
 
   return (
     <>
@@ -56,7 +41,7 @@ export const BookingForm = ({
         <select
           name="res-time"
           id="res-time"
-          value={/*availableTimes.times[0]*/ time}
+          value={time}
           onChange={(e) => setTime(e.target.value)}
         >
           {availableTimes.map((item) => (

@@ -1,27 +1,22 @@
 const avaliableTimesMock = {
-  "2024-12-12": ["17:00", "18:00", "19:00", "20:00", "21:00"],
-};
-
-const initializeTimes = {
   user: null,
   predefined: ["17:00", "18:00", "19:00", "20:00", "21:00"],
 };
 
-const testFunc = (date) => {
-  initializeTimes.user = date;
-  return initializeTimes.predefined;
+const createBookingTime = (date) => {
+  avaliableTimesMock.user = date;
+  return avaliableTimesMock.predefined;
 };
 
 const alreadySelectedDates = [];
 const fetchAPI = (date) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      testFunc(date);
-      let avaliableTimesForSelectedDate = testFunc(date) || [];
+      let avaliableTimesForSelectedDate = createBookingTime(date) || [];
 
       alreadySelectedDates.map((selectedDate) => {
-        if (selectedDate.user == initializeTimes.user) {
-          avaliableTimesForSelectedDate = initializeTimes.predefined.filter(
+        if (selectedDate.user === avaliableTimesMock.user) {
+          avaliableTimesForSelectedDate = avaliableTimesMock.predefined.filter(
             (time) => time !== selectedDate.predefined
           );
         }
@@ -45,4 +40,4 @@ const submitAPI = (formData) => {
   });
 };
 
-export { fetchAPI, submitAPI, initializeTimes };
+export { fetchAPI, submitAPI };

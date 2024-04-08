@@ -1,5 +1,11 @@
 import React from "react";
+import { Header } from "../components/header/Header";
 
 export const ConfirmedBooking = () => {
-  return <div>ConfirmedBooking</div>;
+  return (
+    <>
+      <Header />
+      <h1>Your booking has been confirmed</h1>
+    </>
+  );
 };
