@@ -1,0 +1,50 @@
+form > div > input,
+form > div > select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #f4ce14;
+  border: none;
+  border-radius: 5px;
+  color: #333333;
+  padding: 1.1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  flex-direction: column;
+}
+
+form > div {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  input[type="submit"] {
+    width: 50%;
+  }
+  form > div {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  input[type="submit"] {
+    width: 30%;
+  }
+  form > div {
+    width: 30%;
+  }
+}

@@ -5,7 +5,7 @@ export const ConfirmedBooking = () => {
   return (
     <>
       <Header />
-      <h1>Your booking has been confirmed</h1>
+      <h1 className="general_padding">Your booking has been confirmed</h1>
     </>
   );
 };
