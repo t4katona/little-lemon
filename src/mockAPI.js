@@ -34,6 +34,10 @@ const submitAPI = (formData) => {
           user: formData.date,
           predefined: formData.time,
         });
+        localStorage.setItem(
+          "BookedDate",
+          JSON.stringify(alreadySelectedDates)
+        );
         resolve(true);
       }
     }, 1000);

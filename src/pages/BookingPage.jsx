@@ -43,9 +43,7 @@ export const BookingPage = () => {
       });
   };
 
-  useEffect(() => {
-    updateTimes();
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>

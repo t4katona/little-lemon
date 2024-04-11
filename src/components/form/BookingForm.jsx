@@ -24,8 +24,6 @@ export const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
     console.log("Form submitted");
   };
 
-  useEffect(() => {});
-
   return (
     <div className="general_padding">
       <h2>Book Now</h2>
