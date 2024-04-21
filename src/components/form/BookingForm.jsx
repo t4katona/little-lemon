@@ -4,8 +4,8 @@ import styles from "./bookingForm.module.css";
 export const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [guests, setGuests] = useState("");
-  const [occasion, setOccasion] = useState("");
+  const [guests, setGuests] = useState("1");
+  const [occasion, setOccasion] = useState("Birthday");
 
   const handleDateSelection = (e) => {
     setDate(e.target.value);
@@ -21,7 +21,6 @@ export const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
       occasion: occasion,
     };
     submitForm(formData);
-    console.log("Form submitted");
   };
 
   return (
@@ -81,6 +80,10 @@ export const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
           type="submit"
           value="Make Your reservation"
           onClick={handleSubmit}
+          disabled={!date}
+          className={`${
+            date ? styles.default_submit_btn : styles.disabled_submit_btn
+          } `}
         />
       </form>
     </div>

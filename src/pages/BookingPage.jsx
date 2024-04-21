@@ -43,8 +43,6 @@ export const BookingPage = () => {
       });
   };
 
-  useEffect(() => {}, []);
-
   return (
     <>
       <Header />

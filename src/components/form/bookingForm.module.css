@@ -6,9 +6,9 @@ form > div > select {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
+.default_submit_btn,
+.disabled_submit_btn {
   width: 100%;
-  background-color: #f4ce14;
   border: none;
   border-radius: 5px;
   color: #333333;
@@ -16,6 +16,15 @@ input[type="submit"] {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.default_submit_btn {
+  background-color: #f4ce14;
+  cursor: pointer;
+}
+
+.disabled_submit_btn {
+  background-color: #d5d5d1;
 }
 
 form {
@@ -32,7 +41,8 @@ form > div {
 }
 
 @media only screen and (min-width: 768px) {
-  input[type="submit"] {
+  .default_submit_btn,
+  .disabled_submit_btn {
     width: 50%;
   }
   form > div {
@@ -41,7 +51,8 @@ form > div {
 }
 
 @media only screen and (min-width: 992px) {
-  input[type="submit"] {
+  .default_submit_btn,
+  .disabled_submit_btn {
     width: 30%;
   }
   form > div {
