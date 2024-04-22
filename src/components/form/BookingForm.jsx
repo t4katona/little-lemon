@@ -3,7 +3,7 @@ import styles from "./bookingForm.module.css";
 
 export const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
   const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [time, setTime] = useState(availableTimes[0]);
   const [guests, setGuests] = useState("1");
   const [occasion, setOccasion] = useState("Birthday");
 
@@ -16,7 +16,7 @@ export const BookingForm = ({ availableTimes, updateTimes, submitForm }) => {
     e.preventDefault();
     const formData = {
       date: date,
-      time: time,
+      time: time || availableTimes[0],
       guests: guests,
       occasion: occasion,
     };

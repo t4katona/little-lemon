@@ -28,10 +28,8 @@ class Store {
     let reservations = localStorage.getItem(RESERVATIONS_LOCAL_STORAGE_KEY);
     if (!reservations) {
       saveReservations({});
-      reservations = {};
     }
-
-    this.#reservations = JSON.parse(reservations);
+    this.#reservations = reservations ? JSON.parse(reservations) : {};
   }
 
   getFreeSlots(date) {
